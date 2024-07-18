@@ -6,7 +6,7 @@ app = Flask(__name__)
 # Store the current vMix IPs and ports, identified by unique IDs
 vmix_servers = {}
 
-app.route('/', methods=['GET'])
+@app.route('/', methods=['GET'])
 def main():
     return 'Welcome!!'
 
@@ -92,3 +92,6 @@ def handle_check_vmix_status():
 
     result = check_vmix_status(vmix_id)
     return jsonify(result)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000)
