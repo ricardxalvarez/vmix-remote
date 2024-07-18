@@ -6,6 +6,10 @@ app = Flask(__name__)
 # Store the current vMix IPs and ports, identified by unique IDs
 vmix_servers = {}
 
+app.route('/', methods=['GET'])
+def main():
+    return 'Welcome!!'
+
 # Endpoint to update vMix IP and port for a specific server
 @app.route('/update_vmix', methods=['POST'])
 def update_vmix():
